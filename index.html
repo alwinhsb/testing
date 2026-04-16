@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sumatra</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 body{margin:0;font-family:'Inter',sans-serif;color:#1f2937;}
 h1,h2,h3{font-family:'Playfair Display',serif;}
@@ -14,11 +15,44 @@ section{padding:80px 20px;max-width:1100px;margin:auto;}
 .btn{background:#d4a373;color:white;padding:12px 25px;text-decoration:none;border-radius:6px;display:inline-block;margin-top:15px;}
 .services,.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
 .card{background:#f9f9f9;padding:20px;border-radius:10px;}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;}
-.gallery img{width:100%;border-radius:8px;}
+
+/* 🔥 GALLERY (disempurnakan) */
+.gallery {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: block;
+  break-inside: avoid; /* ✅ penting biar tidak pecah */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* ✅ biar lebih premium */
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9); /* ✅ efek elegan */
+}
+
+/* responsive tetap */
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
 footer{text-align:center;padding:20px;background:#111;color:white;}
-@media(max-width:768px){h1{font-size:28px;}}
 </style>
+  
 </head>
 <body>
 
@@ -71,7 +105,7 @@ footer{text-align:center;padding:20px;background:#111;color:white;}
 </section>
 
 <footer>
-<p>© 2026 Sumatra Tours</p>
+<p>© Guide in Sumatra</p>
 </footer>
 
 </body>
