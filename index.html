@@ -4,15 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guide in Sumatra | Authentic Jungle & Culture Tours</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-  /* 🔥 VARIABEL WARNA (Palet Eropa / Natural) */
+  /* 🔥 VARIABEL WARNA (Palet Eropa / Earthy & Premium) */
   :root {
     --bg-color: #FDFBF7; /* Putih tulang/hangat */
-    --text-main: #2C3329; /* Abu-abu kehijauan gelap (lebih lembut dari hitam) */
-    --accent: #C58C60; /* Terracotta / Warna tanah */
-    --jungle-dark: #1B2A24; /* Hijau hutan gelap premium */
+    --text-main: #2A332B; /* Deep Forest Grey */
+    --accent: #C58C60; /* Terracotta */
+    --jungle-dark: #1B2A24; /* Hijau Hutan Gelap Premium */
     --card-bg: #FFFFFF;
   }
 
@@ -33,37 +36,47 @@
 
   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--jungle-dark);
   }
 
   section {
-    padding: 100px 20px;
+    padding: 90px 20px;
     max-width: 1200px;
     margin: auto;
   }
 
-  .section-title {
+  .section-header {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 60px;
-    position: relative;
+    max-width: 650px;
+    margin: 0 auto 60px auto;
   }
 
-  /* Garis dekoratif kecil di bawah judul */
+  .section-title {
+    font-size: 38px;
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+  }
+
   .section-title::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 2px;
+    width: 50px;
+    height: 3px;
     background: var(--accent);
     margin: 15px auto 0;
+    border-radius: 2px;
   }
 
   /* 🔥 HERO SECTION */
   .hero {
-    height: 70vh; /* Sedikit lebih tinggi agar lebih imersif */
-    min-height: 500px;
+    height: 70vh;
+    min-height: 520px;
     background: url('images/Laketoba1.jpg') no-repeat center 40%;
     background-size: cover;
     display: flex;
@@ -75,12 +88,11 @@
     padding: 0 20px;
   }
 
-  /* Overlay gradasi yang lebih elegan */
   .hero::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to bottom, rgba(27, 42, 36, 0.4), rgba(27, 42, 36, 0.7));
+    background: linear-gradient(to bottom, rgba(27, 42, 36, 0.45), rgba(27, 42, 36, 0.75));
   }
 
   .hero-content {
@@ -92,9 +104,9 @@
 
   .hero h1 {
     color: white;
-    font-size: 52px;
+    font-size: 54px;
     margin-bottom: 15px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
   .hero p {
@@ -110,14 +122,13 @@
     color: white;
     padding: 14px 32px;
     text-decoration: none;
-    border-radius: 30px; /* Pill shape lebih disukai saat ini */
+    border-radius: 30px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-weight: 500;
     transition: all 0.3s ease;
     font-size: 15px;
-    letter-spacing: 0.5px;
   }
 
   .btn:hover {
@@ -127,12 +138,12 @@
 
   .whatsapp-btn {
     background: #25D366;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
   }
 
   .whatsapp-btn:hover {
     background: #1ebe5d;
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
   }
 
   /* 🔥 ABOUT ME */
@@ -154,52 +165,129 @@
     color: var(--jungle-dark);
   }
 
-  /* 🔥 SERVICES */
-  .services {
+  /* 🔥 ==========================================
+     🔥 CUSTOM AESTHETIC SERVICES SECTION 
+     🔥 ========================================== */
+  .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
   }
 
-  .card {
-    background: var(--card-bg);
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Bayangan sangat halus */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid rgba(0,0,0,0.02);
+  .service-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 35px 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
   }
 
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  /* Accent Top Bar Color */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    transition: height 0.3s ease;
   }
 
-  .card h3 {
-    margin-bottom: 15px;
+  /* Warna Kustom untuk Setiap Kartu */
+  /* Card 1: Jungle Trekking (Hijau Hutan / Emerald) */
+  .card-jungle::before { background: #2E6F40; }
+  .card-jungle .icon-box { background: #EAF5ED; color: #2E6F40; }
+  .card-jungle .badge { background: #EAF5ED; color: #2E6F40; }
+
+  /* Card 2: Cultural Tour (Warm Terracotta) */
+  .card-culture::before { background: #D97736; }
+  .card-culture .icon-box { background: #FDF0E6; color: #D97736; }
+  .card-culture .badge { background: #FDF0E6; color: #D97736; }
+
+  /* Card 3: Custom Trip (Warm Gold/Amber) */
+  .card-custom::before { background: #B8860B; }
+  .card-custom .icon-box { background: #FCF8EC; color: #B8860B; }
+  .card-custom .badge { background: #FCF8EC; color: #B8860B; }
+
+  /* Card 4: Transport (Slate Ocean / Deep Blue) */
+  .card-transport::before { background: #2B5B84; }
+  .card-transport .icon-box { background: #EDF4FA; color: #2B5B84; }
+  .card-transport .badge { background: #EDF4FA; color: #2B5B84; }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-card:hover::before {
+    height: 8px;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .icon-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
   }
 
-  .card p {
-    font-size: 15px;
-    margin-bottom: 25px;
-    color: #555;
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 20px;
   }
 
-  .card-link {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    display: inline-flex;
-    align-items: center;
-    transition: gap 0.3s ease;
-    gap: 5px;
-  }
-
-  .card-link:hover {
-    gap: 10px; /* Panah bergerak saat dihover */
+  .service-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
     color: var(--jungle-dark);
+  }
+
+  .service-card p {
+    font-size: 15px;
+    color: #556255;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  .card-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--jungle-dark);
+    text-decoration: none;
+    transition: gap 0.3s ease, color 0.3s ease;
+  }
+
+  .card-cta i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover .card-cta {
+    color: var(--accent);
+  }
+
+  .service-card:hover .card-cta i {
+    transform: translateX(5px);
   }
 
   /* 🔥 WHY EXPLORE WITH ME */
@@ -207,7 +295,7 @@
     background: var(--jungle-dark);
     color: white;
     max-width: 100%;
-    padding: 100px 20px;
+    padding: 90px 20px;
   }
 
   .why-section .section-title {
@@ -261,17 +349,16 @@
   .gallery img {
     width: 100%;
     margin-bottom: 20px;
-    border-radius: 12px;
+    border-radius: 14px;
     display: block;
     break-inside: avoid;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform 0.5s ease, filter 0.5s ease;
-    cursor: pointer;
   }
 
   .gallery img:hover {
     transform: scale(1.03);
-    filter: brightness(0.85);
+    filter: brightness(0.9);
   }
 
   /* 🔥 CTA SECTION */
@@ -293,7 +380,6 @@
     background: #111a16;
     color: rgba(255,255,255,0.5);
     font-size: 14px;
-    letter-spacing: 1px;
   }
 
   /* 🔥 RESPONSIVE */
@@ -318,13 +404,15 @@
     <h1>Guide in Sumatra</h1>
     <p>Wild jungle. Rich culture. Real adventure.</p>
     <a class="btn whatsapp-btn" href="https://wa.me/6283198025471?text=Hi,%20I%20found%20your%20website%20and%20I’m%20interested%20in%20exploring%20Sumatra%20with%20you." target="_blank">
-      💬 Chat on WhatsApp
+      <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
     </a>
   </div>
 </section>
 
 <section class="about-me">
-  <h2 class="section-title">About Me</h2>
+  <div class="section-header">
+    <h2 class="section-title">About Me</h2>
+  </div>
   <p>
     Hello! I’m a local guide born and raised in Sumatra. For me, guiding is not just a job, it’s something I do with heart. Every journey should feel real, personal, and meaningful.
   </p>
@@ -336,39 +424,80 @@
   </p>
 </section>
 
+<!-- 🔥 SECTION SERVICES DENGAN DESAIN BARU 🔥 -->
 <section>
-  <h2 class="section-title">Services</h2>
-  <div class="services">
+  <div class="section-header">
+    <h2 class="section-title">Guided Experiences</h2>
+    <p class="section-subtitle">Thoughtfully curated journeys through Sumatra’s wildest nature and rich cultural heritage.</p>
+  </div>
+
+  <div class="services-grid">
     
-    <div class="card">
-      <h3>Jungle Trekking</h3>
-      <p>See Orangutans and wild animals in their natural habitat safely and respectfully.</p>
-      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20in%20Jungle%20Trekking." target="_blank">
-        Ask for details <span>→</span>
+    <!-- CARD 1 -->
+    <div class="service-card card-jungle">
+      <div>
+        <div class="card-top">
+          <div class="icon-box">
+            <i class="fa-solid fa-tree"></i>
+          </div>
+          <span class="badge">Wildlife</span>
+        </div>
+        <h3>Jungle Trekking</h3>
+        <p>Observe wild Orangutans and exotic wildlife in Gunung Leuser National Park safely and ethically.</p>
+      </div>
+      <a class="card-cta" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20in%20Jungle%20Trekking." target="_blank">
+        Ask for details <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
-    
-    <div class="card">
-      <h3>Cultural Tour</h3>
-      <p>Experience the heart of Sumatra through local traditions, village life, and traditional food.</p>
-      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20in%20your%20cultural%20tour%20in%20Sumatra." target="_blank">
-        Ask for details <span>→</span>
+
+    <!-- CARD 2 -->
+    <div class="service-card card-culture">
+      <div>
+        <div class="card-top">
+          <div class="icon-box">
+            <i class="fa-solid fa-masks-theater"></i>
+          </div>
+          <span class="badge">Heritage</span>
+        </div>
+        <h3>Cultural Tour</h3>
+        <p>Experience local traditions, Batak & Minangkabau architecture, authentic home-cooked meals, and ancestral lore.</p>
+      </div>
+      <a class="card-cta" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20in%20your%20cultural%20tour%20in%20Sumatra." target="_blank">
+        Ask for details <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
-    
-    <div class="card">
-      <h3>Custom Trip</h3>
-      <p>Flexible and personalized journeys designed entirely around your pace and interests.</p>
-      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20tour%20in%20Sumatra." target="_blank">
-        Ask for details <span>→</span>
+
+    <!-- CARD 3 -->
+    <div class="service-card card-custom">
+      <div>
+        <div class="card-top">
+          <div class="icon-box">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <span class="badge">Personalized</span>
+        </div>
+        <h3>Custom Trip</h3>
+        <p>Flexible itineraries crafted around your exact schedule, physical fitness, and specific travel interests.</p>
+      </div>
+      <a class="card-cta" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20tour%20in%20Sumatra." target="_blank">
+        Ask for details <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
-    
-    <div class="card">
-      <h3>Transport</h3>
-      <p>Safe, comfortable, and reliable travel across Sumatra with experienced local drivers.</p>
-      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin," target="_blank">
-        Ask for details <span>→</span>
+
+    <!-- CARD 4 -->
+    <div class="service-card card-transport">
+      <div>
+        <div class="card-top">
+          <div class="icon-box">
+            <i class="fa-solid fa-van-shuttle"></i>
+          </div>
+          <span class="badge">Private Car</span>
+        </div>
+        <h3>Private Transport</h3>
+        <p>Comfortable, air-conditioned, and reliable private transit across Sumatra with an experienced driver.</p>
+      </div>
+      <a class="card-cta" href="https://wa.me/6283198025471?text=Hi%20Alwin," target="_blank">
+        Ask for details <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
 
@@ -376,38 +505,40 @@
 </section>
 
 <section class="why-section">
-  <h2 class="section-title">Why Explore With Me?</h2>
+  <div class="section-header">
+    <h2 class="section-title">Why Explore With Me?</h2>
+  </div>
   <div class="why-list">
 
     <div class="why-item">
-      <div class="icon">✓</div>
+      <div class="icon"><i class="fa-solid fa-check"></i></div>
       <div>
         <h3>Local Expert</h3>
-        <p>Deep knowledge of the jungle, wildlife, and local traditions passed down through generations.</p>
+        <p>Deep knowledge of the jungle, wildlife behavior, and local traditions passed down through generations.</p>
       </div>
     </div>
 
     <div class="why-item">
-      <div class="icon">✓</div>
+      <div class="icon"><i class="fa-solid fa-check"></i></div>
       <div>
         <h3>Flexible & Personal</h3>
-        <p>No rigid schedules. We move at your pace and focus strictly on your personal interests.</p>
+        <p>No rigid schedules or crowded tour buses. We travel at your comfortable pace.</p>
       </div>
     </div>
 
     <div class="why-item">
-      <div class="icon">✓</div>
+      <div class="icon"><i class="fa-solid fa-check"></i></div>
       <div>
         <h3>Honest Pricing</h3>
-        <p>No hidden fees or tourist traps. Fair prices supporting local communities for authentic experiences.</p>
+        <p>No hidden commissions or tourist traps. Direct, fair prices that support local families.</p>
       </div>
     </div>
 
     <div class="why-item">
-      <div class="icon">✓</div>
+      <div class="icon"><i class="fa-solid fa-check"></i></div>
       <div>
         <h3>Trusted by Travelers</h3>
-        <p>Consistently high reviews from international travelers who became friends along the way.</p>
+        <p>Consistently high reviews from international guests who arrived as clients and left as friends.</p>
       </div>
     </div>
 
@@ -415,7 +546,9 @@
 </section>
 
 <section>
-  <h2 class="section-title">Gallery</h2>
+  <div class="section-header">
+    <h2 class="section-title">Moments in Sumatra</h2>
+  </div>
   <div class="gallery">
     <img src="images/Sibayak.jpg" alt="Mount Sibayak">
     <img src="images/Taram.jpg" alt="Taram Village">
@@ -430,7 +563,7 @@
   <h2 class="section-title">Start Your Adventure</h2>
   <p>Ready to explore the real Sumatra? Send me a message directly.</p>
   <a class="btn whatsapp-btn" href="https://wa.me/6283198025471?text=Hi,%20I%20found%20your%20website%20and%20I’m%20interested%20in%20exploring%20Sumatra%20with%20you." target="_blank">
-    💬 Chat on WhatsApp
+    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
   </a>
 </section>
 
