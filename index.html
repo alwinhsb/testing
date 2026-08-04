@@ -3,217 +3,411 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sumatra</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Guide in Sumatra | Authentic Jungle & Culture Tours</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:'Inter',sans-serif;color:#1f2937;}
-h1,h2,h3{font-family:'Playfair Display',serif;}
-section{padding:80px 20px;max-width:1100px;margin:auto;}
-.hero{
-  height:40vh; /* 🔥 lebih seperti banner */
-  min-height:400px; /* biar gak terlalu kecil di HP */
-  background: url('images/Laketoba1.jpg') no-repeat;
-  background-size: cover;
-  background-position: center 35%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-}
-.hero-overlay{
-  background: linear-gradient(
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.6)
-  );
-  padding:40px;
-  border-radius:10px;
-}
-.btn{background:#d4a373;color:white;padding:12px 25px;text-decoration:none;border-radius:6px;display:inline-block;margin-top:15px;}
-.services,.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card{background:#f9f9f9;padding:20px;border-radius:10px;}
-
-/* 🔥 GALLERY (disempurnakan) */
-.gallery {
-  column-count: 3;
-  column-gap: 15px;
-}
-
-.gallery img {
-  width: 100%;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  display: block;
-  break-inside: avoid; /* ✅ penting biar tidak pecah */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* ✅ biar lebih premium */
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  filter: brightness(0.9); /* ✅ efek elegan */
-}
-
-.why {
-  background: #0f5132;
-  color: white;
-  padding: 80px 20px;
-}
-
-.why h2 {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
-}
-
-.why-list {
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  gap: 30px;
-}
-
-.why-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.why-item .icon {
-  background: rgba(255,255,255,0.1);
-  color: #d4a373;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.why-item h3 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.why-item p {
-  margin: 5px 0 0;
-  color: rgba(255,255,255,0.7);
-}
-
-.whatsapp-btn {
-  background: #25D366;
-  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-  transition: all 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-  background: #1ebe5d;
-  transform: translateY(-2px);
-}
-
-/* responsive tetap */
-@media (max-width: 768px) {
-  .gallery {
-    column-count: 2;
+  /* 🔥 VARIABEL WARNA (Palet Eropa / Natural) */
+  :root {
+    --bg-color: #FDFBF7; /* Putih tulang/hangat */
+    --text-main: #2C3329; /* Abu-abu kehijauan gelap (lebih lembut dari hitam) */
+    --accent: #C58C60; /* Terracotta / Warna tanah */
+    --jungle-dark: #1B2A24; /* Hijau hutan gelap premium */
+    --card-bg: #FFFFFF;
   }
-}
 
-@media (max-width: 480px) {
-  .gallery {
-    column-count: 1;
+  /* 🔥 RESET & BASE */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
-}
-
-footer{text-align:center;padding:20px;background:#111;color:white;}
-</style>
   
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: var(--jungle-dark);
+  }
+
+  section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  /* Garis dekoratif kecil di bawah judul */
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 15px auto 0;
+  }
+
+  /* 🔥 HERO SECTION */
+  .hero {
+    height: 70vh; /* Sedikit lebih tinggi agar lebih imersif */
+    min-height: 500px;
+    background: url('images/Laketoba1.jpg') no-repeat center 40%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  /* Overlay gradasi yang lebih elegan */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(27, 42, 36, 0.4), rgba(27, 42, 36, 0.7));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    color: white;
+    font-size: 52px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+
+  .hero p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* 🔥 BUTTONS */
+  .btn {
+    background: var(--accent);
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 30px; /* Pill shape lebih disukai saat ini */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .btn:hover {
+    background: #b07950;
+    transform: translateY(-2px);
+  }
+
+  .whatsapp-btn {
+    background: #25D366;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+  }
+
+  .whatsapp-btn:hover {
+    background: #1ebe5d;
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.3);
+  }
+
+  /* 🔥 ABOUT ME */
+  .about-me {
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  .about-me p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #4a5547;
+  }
+
+  .about-me p:first-of-type {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--jungle-dark);
+  }
+
+  /* 🔥 SERVICES */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Bayangan sangat halus */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+
+  .card h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #555;
+  }
+
+  .card-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    transition: gap 0.3s ease;
+    gap: 5px;
+  }
+
+  .card-link:hover {
+    gap: 10px; /* Panah bergerak saat dihover */
+    color: var(--jungle-dark);
+  }
+
+  /* 🔥 WHY EXPLORE WITH ME */
+  .why-section {
+    background: var(--jungle-dark);
+    color: white;
+    max-width: 100%;
+    padding: 100px 20px;
+  }
+
+  .why-section .section-title {
+    color: white;
+  }
+
+  .why-list {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+
+  .why-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .why-item .icon {
+    background: rgba(197, 140, 96, 0.2);
+    color: var(--accent);
+    min-width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .why-item h3 {
+    color: white;
+    margin: 0 0 8px 0;
+    font-size: 20px;
+  }
+
+  .why-item p {
+    margin: 0;
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* 🔥 GALLERY */
+  .gallery {
+    column-count: 3;
+    column-gap: 20px;
+  }
+
+  .gallery img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: block;
+    break-inside: avoid;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.5s ease, filter 0.5s ease;
+    cursor: pointer;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.03);
+    filter: brightness(0.85);
+  }
+
+  /* 🔥 CTA SECTION */
+  .cta-section {
+    text-align: center;
+    padding: 80px 20px 100px;
+  }
+
+  .cta-section p {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #555;
+  }
+
+  /* 🔥 FOOTER */
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #111a16;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* 🔥 RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 40px; }
+    .gallery { column-count: 2; }
+    section { padding: 70px 20px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+    .gallery { column-count: 1; }
+    .why-list { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
 <section class="hero">
-<div class="hero-overlay">
-<h1>Guide in Sumatra</h1>
-<p>Wild jungle. Rich culture. Real adventure.</p>
-<a class="btn whatsapp-btn" 
-href="https://wa.me/6283198025471?text=Hi,%20I%20found%20your%20website%20and%20I’m%20interested%20in%20exploring%20Sumatra%20with%20you." 
-target="_blank">
-💬 Chat on WhatsApp
-</a>
-</div>
+  <div class="hero-content">
+    <h1>Guide in Sumatra</h1>
+    <p>Wild jungle. Rich culture. Real adventure.</p>
+    <a class="btn whatsapp-btn" href="https://wa.me/6283198025471?text=Hi,%20I%20found%20your%20website%20and%20I’m%20interested%20in%20exploring%20Sumatra%20with%20you." target="_blank">
+      💬 Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+<section class="about-me">
+  <h2 class="section-title">About Me</h2>
+  <p>
+    Hello! I’m a local guide born and raised in Sumatra. For me, guiding is not just a job, it’s something I do with heart. Every journey should feel real, personal, and meaningful.
+  </p>
+  <p>
+    I love sharing the beauty of my home, from rainforest adventures to the rich culture of local communities, with genuine hospitality and local insight. It’s not just about visiting places, but about creating experiences you can truly feel and remember.
+  </p>
+  <p>
+    You’re not just visiting a place, you’re stepping into a story, a culture, and a way of life. And I’m here to share it with you.
+  </p>
 </section>
 
 <section>
-<h2>About Me</h2>
-<p>
-Hello! I’m a local guide born and raised in Sumatra. For me, guiding is not just a job, it’s something I do with heart. 
-Every journey should feel real, personal, and meaningful.
-</p>
+  <h2 class="section-title">Services</h2>
+  <div class="services">
+    
+    <div class="card">
+      <h3>Jungle Trekking</h3>
+      <p>See Orangutans and wild animals in their natural habitat safely and respectfully.</p>
+      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20in%20Jungle%20Trekking." target="_blank">
+        Ask for details <span>→</span>
+      </a>
+    </div>
+    
+    <div class="card">
+      <h3>Cultural Tour</h3>
+      <p>Experience the heart of Sumatra through local traditions, village life, and traditional food.</p>
+      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20in%20your%20cultural%20tour%20in%20Sumatra." target="_blank">
+        Ask for details <span>→</span>
+      </a>
+    </div>
+    
+    <div class="card">
+      <h3>Custom Trip</h3>
+      <p>Flexible and personalized journeys designed entirely around your pace and interests.</p>
+      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin,%20I’m%20interested%20tour%20in%20Sumatra." target="_blank">
+        Ask for details <span>→</span>
+      </a>
+    </div>
+    
+    <div class="card">
+      <h3>Transport</h3>
+      <p>Safe, comfortable, and reliable travel across Sumatra with experienced local drivers.</p>
+      <a class="card-link" href="https://wa.me/6283198025471?text=Hi%20Alwin," target="_blank">
+        Ask for details <span>→</span>
+      </a>
+    </div>
 
-<p>
-With genuine hospitality, I love sharing the beauty of my home, from deep rainforest adventures to the rich culture of local communities. 
-Not just as a tour, but as an experience you can truly feel and remember.
-</p>
-
-<p>
-You’re not just visiting a place, you’re stepping into a story, a culture, and a way of life. 
-And I’m here to share it with you.
-</p>
+  </div>
 </section>
 
-<section>
-<h2>Services</h2>
-<div class="services">
-<div class="card"><h3>Jungle Trekking</h3><p>See Orangutans in their natural habitat.</p></div>
-<div class="card"><h3>Lake Toba Tour</h3><p>Explore the largest volcanic lake.</p></div>
-<div class="card"><h3>Custom Trip</h3><p>Flexible and personalized journeys.</p></div>
-<div class="card"><h3>Transport</h3><p>Safe and reliable travel across Sumatra.</p></div>
-</div>
-</section>
-
-<section style="text-align:center;">
-<a class="btn whatsapp-btn" 
-href="https://wa.me/6283198025471?text=Hi,%20I%20found%20your%20website%20and%20I’m%20interested%20in%20exploring%20Sumatra%20with%20you." 
-target="_blank">
-💬 Chat on WhatsApp
-</a>
-</section>
-
-<section class="why">
-  <h2>Why Explore With Me?</h2>
-
+<section class="why-section">
+  <h2 class="section-title">Why Explore With Me?</h2>
   <div class="why-list">
 
     <div class="why-item">
-      <div class="icon">✔</div>
+      <div class="icon">✓</div>
       <div>
         <h3>Local Expert</h3>
-        <p>Deep knowledge of the jungle, wildlife, and local traditions.</p>
+        <p>Deep knowledge of the jungle, wildlife, and local traditions passed down through generations.</p>
       </div>
     </div>
 
     <div class="why-item">
-      <div class="icon">✔</div>
+      <div class="icon">✓</div>
       <div>
         <h3>Flexible & Personal</h3>
-        <p>No rigid schedules. We move at your pace and focus on your interests.</p>
+        <p>No rigid schedules. We move at your pace and focus strictly on your personal interests.</p>
       </div>
     </div>
 
     <div class="why-item">
-      <div class="icon">✔</div>
+      <div class="icon">✓</div>
       <div>
         <h3>Honest Pricing</h3>
-        <p>No hidden fees or tourist traps. Fair prices for authentic experiences.</p>
+        <p>No hidden fees or tourist traps. Fair prices supporting local communities for authentic experiences.</p>
       </div>
     </div>
 
     <div class="why-item">
-      <div class="icon">✔</div>
+      <div class="icon">✓</div>
       <div>
         <h3>Trusted by Travelers</h3>
-        <p>Consistently high reviews from travelers.</p>
+        <p>Consistently high reviews from international travelers who became friends along the way.</p>
       </div>
     </div>
 
@@ -221,39 +415,27 @@ target="_blank">
 </section>
 
 <section>
-<h2>Gallery</h2>
-<div class="gallery">
-
-<img src="images/Sibayak.jpg" alt="Sibayak">
-<img src="images/Taram.jpg" alt="Taram">
-<img src="images/MinangkabauHouse2.jpg">
-<img src="images/orangutan1.jpeg" alt="Orangutan1">
-<img src="images/BatakHouse.jpg" alt="batakhouse">
-<img src="images/Laketoba2.jpg">
-</div>
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery">
+    <img src="images/Sibayak.jpg" alt="Mount Sibayak">
+    <img src="images/Taram.jpg" alt="Taram Village">
+    <img src="images/MinangkabauHouse2.jpg" alt="Minangkabau Architecture">
+    <img src="images/orangutan1.jpeg" alt="Wild Orangutan in Sumatra">
+    <img src="images/BatakHouse.jpg" alt="Traditional Batak House">
+    <img src="images/Laketoba2.jpg" alt="Lake Toba View">
+  </div>
 </section>
 
-<section>
-<h2>Reviews</h2>
-<div class="reviews">
-<div class="card"><p>"xxx"</p><b>xxx, xxx</b></div>
-<div class="card"><p>"xxx"</p><b>xxx, xxx</b></div>
-<div class="card"><p>"xxx"</p><b>xxx, xxx</b></div>
-</div>
-</section>
-
-<section style="text-align:center;">
-<h2>Start Your Adventure</h2>
-<p>Contact me directly on WhatsApp</p>
-<a class="btn whatsapp-btn" 
-href="https://wa.me/6283198025471?text=Hi,%20I%20found%20your%20website%20and%20I’m%20interested%20in%20exploring%20Sumatra%20with%20you." 
-target="_blank">
-💬 Chat on WhatsApp
-</a>
+<section class="cta-section">
+  <h2 class="section-title">Start Your Adventure</h2>
+  <p>Ready to explore the real Sumatra? Send me a message directly.</p>
+  <a class="btn whatsapp-btn" href="https://wa.me/6283198025471?text=Hi,%20I%20found%20your%20website%20and%20I’m%20interested%20in%20exploring%20Sumatra%20with%20you." target="_blank">
+    💬 Chat on WhatsApp
+  </a>
 </section>
 
 <footer>
-<p>© Guide in Sumatra</p>
+  <p>© Guide in Sumatra. Crafted with local pride.</p>
 </footer>
 
 </body>
